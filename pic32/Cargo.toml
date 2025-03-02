@@ -1,0 +1,45 @@
+[package]
+name = "usb-audio"
+version = "0.1.0"
+authors = ["Kiffie van Haash"]
+license = "MIT"
+edition = "2018"
+
+[features]
+pic32mx2xxfxxxb = ["pic32-hal/pic32mx2xxfxxxb"]
+pic32mx2x4fxxxb = ["pic32-hal/pic32mx2x4fxxxb"]
+panic-usb = ["usb-log/panic-handler"]
+default = ["pic32mx2xxfxxxb", "ssd1306", "panic-usb"]
+
+[dependencies]
+cfg-if = "1.0.0"
+mips-mcu = { version = "0.3.0", features = ["critical-section-single-core"] }
+mips-rt = "0.3.0"
+kiffieboot = { git = "https://github.com/kiffie/kiffieboot.git", features = ["pic32mx2x0"] }
+critical-section = "1.2.0"
+mips-mcu-alloc = "0.6.0"
+embedded-hal = "1.0.0"
+embedded-hal_02 = {package = "embedded-hal", version = "0.2.7"}
+nb = "1.1.0"
+log = "0.4"
+usb-log = { git = "https://github.com/kiffie/usb-log.git" }
+pic32-hal = { version = "0.13.0", features = ["usb-device"] }
+usb-device = { version = "0.3.2", features = ["control-buffer-256"] }
+usbd-audio = "0.2.0"
+ssd1306 = { version = "0.4.1", optional = true }
+display-interface = "0.4.0"
+num-complex = { version = "0.3.1", default-features = false }
+fixed-fft = "0.1.0"
+pic32-config-sector = "0.3.0"
+
+[build-dependencies]
+chrono = "0.4"
+
+[profile.release]
+opt-level = 2
+lto = true
+debug = true
+
+[profile.dev]
+lto = true
+

@@ -1,0 +1,8 @@
+[target.mipsel-unknown-none]
+rustflags = ["-C", "link-arg=-Tlink.x"]
+
+[build]
+target = "mipsel-unknown-none"
+
+[unstable]
+build-std = ["core", "compiler_builtins", "alloc"]
