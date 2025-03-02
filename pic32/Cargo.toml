@@ -3,7 +3,7 @@ name = "usb-audio"
 version = "0.1.0"
 authors = ["Kiffie van Haash"]
 license = "MIT"
-edition = "2018"
+edition = "2024"
 
 [features]
 pic32mx2xxfxxxb = ["pic32-hal/pic32mx2xxfxxxb"]

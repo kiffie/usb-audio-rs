@@ -282,18 +282,18 @@ dependencies = [
 
 [[package]]
 name = "mips-rt"
-version = "0.3.6"
+version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1a1dcc8ed88385c3bc9fe0eb2e4a5b9fc283c7d775e401fe5608014a9286a58c"
+checksum = "2d01a5f0e13e45ad4e8767b5256f9d9a79280665555deb67a3f84ac9c719fbb6"
 dependencies = [
  "mips-rt-macros",
 ]
 
 [[package]]
 name = "mips-rt-macros"
-version = "0.3.4"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c92f7fdae7086c11a137efb265ea1c20ed565dd8b17fcc1eda8e7e9a215b99ee"
+checksum = "c9ff0ef5b474f15c3999957720846dc2cc3c7ce388b06350467da4ec93cfb51f"
 dependencies = [
  "proc-macro2",
  "quote",

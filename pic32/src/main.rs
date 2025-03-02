@@ -62,7 +62,7 @@ use visu::BLOCK_LENGTH;
 
 // Boot loader
 #[cfg(feature = "pic32mx2xxfxxxb")]
-#[link_section = ".bootloader"]
+#[unsafe(link_section = ".bootloader")]
 #[used]
 pub static BOOT_LOADER: [u8; 3056] = *include_bytes!("../boot/kb3k-dfu-mx2xx-48mhz.bin");
 
@@ -73,7 +73,7 @@ pub static BOOT_LOADER: [u8; 3056] = *include_bytes!("../boot/kb3k-dfu-mx2x4-72m
 
 // PIC32 configuration registers for PIC32MX270 (48 MHz)
 #[cfg(feature = "pic32mx2xxfxxxb")]
-#[link_section = ".configsfrs"]
+#[unsafe(link_section = ".configsfrs")]
 #[used]
 pub static CONFIGSFRS: ConfigSector = ConfigSector::default()
     // DEVCFG3
